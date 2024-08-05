@@ -34,6 +34,10 @@ echo "Upgrading pip..."
 source foundryVenv/bin/activate
 pip install --upgrade pip
 
+# Install the `python-dotenv` module
+echo "Installing python-dotenv..."
+pip install python-dotenv
+
 # Install Python dependencies
 echo "Installing Python dependencies..."
 pip install -r requirements.txt
