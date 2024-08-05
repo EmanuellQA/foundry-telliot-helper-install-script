@@ -6,17 +6,6 @@ if [ -d "~/foundry-telliot-helper" ]; then
   exit 1
 fi
 
-# Create the directory if it doesn't exist
-echo "Creating folder to clone repo..."
-mkdir ~/foundry-telliot-helper
-
-# Move to the new directory
-echo "Moving to foundry-telliot-helper folder..."
-cd ~/foundry-telliot-helper
-
-echo "Updating package list..."
-sudo apt update
-
 echo "Cloning repo..."
 git clone git@github.com:EmanuellQA/foundry-telliot-helper.git
 
@@ -26,6 +15,12 @@ else
   echo "Failed to clone repository."
   exit 1
 fi
+
+echo "Moving to foundry-telliot-helper folder..."
+cd ~/foundry-telliot-helper
+
+echo "Updating package list..."
+sudo apt update
 
 echo "Installing Python 3.10 and venv..."
 sudo apt install -y python3.10 python3.10-venv python3-pip curl
