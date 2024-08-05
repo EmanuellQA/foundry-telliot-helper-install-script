@@ -32,6 +32,13 @@ echo "Cloning branch: $branch"
 echo "Cloning repo..."
 git clone -b "$branch" git@github.com:EmanuellQA/foundry-telliot-helper.git
 
+if [ $? -eq 0 ]; then
+  echo "Repository cloned successfully."
+else
+  echo "Failed to clone repository."
+  exit 1
+fi
+
 echo "Installing Python 3.10 and venv..."
 sudo apt install -y python3.10 python3.10-venv python3-pip curl
 
