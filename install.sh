@@ -4,6 +4,12 @@
 echo "Updating package list..."
 sudo apt update
 
+echo "Cloning repo..."
+sudo git clone git@github.com:EmanuellQA/foundry-telliot-helper.git
+
+echo "Moving to foundry-telliot-helper folder..."
+cd ~/foundry-telliot-helper
+
 echo "Installing Python 3.10 and venv..."
 sudo apt install -y python3.10 python3.10-venv python3-pip curl
 
