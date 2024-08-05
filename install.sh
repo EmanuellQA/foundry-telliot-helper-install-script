@@ -39,6 +39,9 @@ else
   exit 1
 fi
 
+echo "Moving to foundry-telliot-helper folder..."
+cd "$HOME/foundry-telliot-helper"
+
 echo "Installing Python 3.10 and venv..."
 sudo apt install -y python3.10 python3.10-venv python3-pip curl
 
@@ -48,7 +51,6 @@ python3.10 -m venv foundryVenv
 
 # Upgrade pip inside the virtual environment
 echo "Upgrading pip..."
-source foundryVenv/bin/activate
 pip install --upgrade pip
 
 # Install the `python-dotenv` module
