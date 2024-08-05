@@ -28,9 +28,6 @@ esac
 
 echo "Cloning branch: $branch"
 
-echo "Updating package list..."
-sudo apt update
-
 echo "Installing Python 3.10 and venv..."
 sudo apt install -y python3.10 python3.10-venv python3-pip curl
 
