@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Check if the directory already exists
-if [ -d "~/foundry-telliot-helper" ]; then
+if [ -d "$HOME/foundry-telliot-helper" ]; then
   echo "The folder 'foundry-telliot-helper' already exists. Please remove or rename it."
   exit 1
 fi
@@ -17,7 +17,7 @@ else
 fi
 
 echo "Moving to foundry-telliot-helper folder..."
-cd ~/foundry-telliot-helper
+cd "$HOME/foundry-telliot-helper"
 
 echo "Updating package list..."
 sudo apt update
@@ -31,6 +31,7 @@ python3.10 -m venv foundryVenv
 
 # Upgrade pip inside the virtual environment
 echo "Upgrading pip..."
+source foundryVenv/bin/activate
 pip install --upgrade pip
 
 # Install Python dependencies
