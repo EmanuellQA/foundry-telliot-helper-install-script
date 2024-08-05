@@ -70,9 +70,8 @@ echo "Adding Foundry to PATH..."
 # Assuming you are using a bash shell
 echo 'export PATH="$HOME/.foundry/bin:$PATH"' >> ~/.bashrc
 source ~/.bashrc
-
+echo
 echo "Installation complete!"
-echo "Run cd ~/foundry-telliot-helper to get in the folder"
-echo "Then run source foundryVenv/bin/activate to activate python venv"
-echo "Don't forget to copy and edit the .env.example file!"
+echo
+echo -e "Run cd ~/foundry-telliot-helper to get in the folder\n Then run source foundryVenv/bin/activate to activate python venv\n Don't forget to copy and edit the .env.example file!\n\n To run the helper: python3 main.py"
 
