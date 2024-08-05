@@ -6,20 +6,27 @@ if [ -d "$HOME/foundry-telliot-helper" ]; then
   exit 1
 fi
 
-# Prompt the user for the environment to clone
-echo "Choose an option"
-read -p "type dev or main:" branch
+echo "Choose the environment to clone:"
+echo "1 - main"
+echo "2 - dev"
+read -p "Enter 1 for main or 2 for dev: " environment_choice
 
-# Clone the repository with the selected branch
-echo "Cloning repo..."
-git clone -b "$branch" git@github.com:EmanuellQA/foundry-telliot-helper.git
+echo "You entered: $environment_choice"
 
-if [ $? -eq 0 ]; then
-  echo "Repository cloned successfully."
-else
-  echo "Failed to clone repository."
-  exit 1
-fi
+case $environment_choice in
+  1)
+    branch="main"
+    ;;
+  2)
+    branch="dev"
+    ;;
+  *)
+    echo "Invalid choice. Please enter 1 for main or 2 for dev."
+    exit 1
+    ;;
+esac
+
+echo "Cloning branch: $branch"
 
 echo "Updating package list..."
 sudo apt update
