@@ -28,6 +28,10 @@ esac
 
 echo "Cloning branch: $branch"
 
+# Clone the repository with the selected branch
+echo "Cloning repo..."
+git clone -b "$branch" git@github.com:EmanuellQA/foundry-telliot-helper.git
+
 echo "Installing Python 3.10 and venv..."
 sudo apt install -y python3.10 python3.10-venv python3-pip curl
 
