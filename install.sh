@@ -1,18 +1,21 @@
 #!/bin/bash
 
 # Update package list and install necessary system packages
-echo "Updating package list..."
-sudo apt update
-
-echo "Cloning repo..."
-git clone git@github.com:EmanuellQA/foundry-telliot-helper.git
+echo "Creating folder to clone repo..."
+mkdir foundry-telliot-helper
 
 if [ -d "~/foundry-telliot-helper" ]; then
   echo "Moving to foundry-telliot-helper folder..."
   cd ~/foundry-telliot-helper
 else
-  echo "Failed to clone repository or directory does not exist."
+  echo "Failed to create folder or does not exist."
 fi
+
+echo "Updating package list..."
+sudo apt update
+
+echo "Cloning repo..."
+git clone git@github.com:EmanuellQA/foundry-telliot-helper.git
 
 echo "Installing Python 3.10 and venv..."
 sudo apt install -y python3.10 python3.10-venv python3-pip curl
