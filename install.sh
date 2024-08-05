@@ -6,20 +6,24 @@ if [ -d "$HOME/foundry-telliot-helper" ]; then
   exit 1
 fi
 
-# Prompt the user for the environment to clone using select
+# Prompt the user for the environment to clone
 echo "Choose the environment to clone:"
-select environment_choice in "main" "dev"; do
+echo "1 - main"
+echo "2 - dev"
+
+while true; do
+    read -p "Enter 1 for main or 2 for dev: " environment_choice
     case $environment_choice in
-        main)
+        1)
             branch="main"
             break
             ;;
-        dev)
+        2)
             branch="dev"
             break
             ;;
         *)
-            echo "Invalid choice. Please enter a number corresponding to the options."
+            echo "Invalid choice. Please enter 1 for main or 2 for dev."
             ;;
     esac
 done
