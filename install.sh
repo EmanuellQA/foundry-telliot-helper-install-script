@@ -6,25 +6,23 @@ if [ -d "$HOME/foundry-telliot-helper" ]; then
   exit 1
 fi
 
-# Prompt the user for the environment to clone
+# Prompt the user for the environment to clone using select
 echo "Choose the environment to clone:"
-echo "1 - main"
-echo "2 - dev"
-read -p "Enter 1 for main or 2 for dev: " environment_choice
-
-# Determine the branch based on user choice
-case $environment_choice in
-  1)
-    branch="main"
-    ;;
-  2)
-    branch="dev"
-    ;;
-  *)
-    echo "Invalid choice. Please enter 1 for main or 2 for dev."
-    exit 1
-    ;;
-esac
+select environment_choice in "main" "dev"; do
+    case $environment_choice in
+        main)
+            branch="main"
+            break
+            ;;
+        dev)
+            branch="dev"
+            break
+            ;;
+        *)
+            echo "Invalid choice. Please enter a number corresponding to the options."
+            ;;
+    esac
+done
 
 # Clone the repository with the selected branch
 echo "Cloning repo..."
