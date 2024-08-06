@@ -56,6 +56,7 @@ sudo apt install -y python3.10 python3.10-venv python3-pip curl
 echo
 echo "Creating virtual environment..."
 python3.10 -m venv foundryVenv
+source foundryVenv/bin/activate
 
 # Upgrade pip inside the virtual environment
 echo
@@ -82,7 +83,7 @@ echo "Adding Foundry to PATH..."
 # Assuming you are using a bash shell
 echo 'export PATH="$HOME/.foundry/bin:$PATH"' >> ~/.bashrc
 source ~/.bashrc
-echo foundryup
+foundryup
 echo
 echo "Installation complete!"
 echo
