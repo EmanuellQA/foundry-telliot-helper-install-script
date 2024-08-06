@@ -54,7 +54,7 @@ sudo apt install -y python3.10 python3.10-venv python3-pip curl
 
 # Create and activate the virtual environment
 echo
-echo "Creating virtual environment..."
+echo "Creating and entering virtual environment..."
 python3.10 -m venv foundryVenv
 source foundryVenv/bin/activate
 
@@ -80,10 +80,12 @@ curl -L https://foundry.paradigm.xyz | bash
 
 # Add Foundry to PATH
 echo "Adding Foundry to PATH..."
-# Assuming you are using a bash shell
 echo 'export PATH="$HOME/.foundry/bin:$PATH"' >> ~/.bashrc
-source ~/.bashrc
+source "$HOME/.bashrc"
+echo
+echo "Running foundryup to install Foundry..."
 foundryup
+
 echo
 echo "Installation complete!"
 echo
