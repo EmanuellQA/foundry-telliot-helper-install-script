@@ -6,6 +6,7 @@ if [ -d "$HOME/foundry-telliot-helper" ]; then
   exit 1
 fi
 
+echo 
 echo "This script will install Python, Foundry and may mess with your dev env."
 echo "If installing in your main machine, please read the install.sh before continuing!"
 echo
@@ -30,6 +31,7 @@ case $environment_choice in
 esac
 
 echo "Cloning branch: $branch"
+echo
 
 # Clone the repository with the selected branch
 echo "Cloning repo..."
@@ -42,38 +44,46 @@ else
   exit 1
 fi
 
+echo
 echo "Moving to foundry-telliot-helper folder..."
 cd "$HOME/foundry-telliot-helper"
 
+echo
 echo "Installing Python 3.10 and venv..."
 sudo apt install -y python3.10 python3.10-venv python3-pip curl
 
 # Create and activate the virtual environment
+echo
 echo "Creating virtual environment..."
 python3.10 -m venv foundryVenv
 
 # Upgrade pip inside the virtual environment
+echo
 echo "Upgrading pip..."
 pip install --upgrade pip
 
 # Install the `python-dotenv` module
+echo
 echo "Installing python-dotenv..."
 pip install python-dotenv
 
 # Install Python dependencies
+echo
 echo "Installing Python dependencies..."
 pip install -r requirements.txt
 
 # Install Foundry
+echo
 echo "Installing Foundry..."
 curl -L https://foundry.paradigm.xyz | bash
 
-# Optional: Add Foundry to PATH
+# Add Foundry to PATH
 echo "Adding Foundry to PATH..."
 # Assuming you are using a bash shell
 echo 'export PATH="$HOME/.foundry/bin:$PATH"' >> ~/.bashrc
 source ~/.bashrc
+echo foundryup
 echo
 echo "Installation complete!"
 echo
-echo -e "Run cd ~/foundry-telliot-helper to get in the folder\n Then run source foundryVenv/bin/activate to activate python venv\n Don't forget to copy and edit the .env.example file!\n\n To run the helper: python3 main.py"
+echo -e "Run 'cd ~/foundry-telliot-helper' to get in the folder\n Then run 'source foundryVenv/bin/activate' to activate python venv\n Don't forget to copy and edit the '.env.example' file!\n\n To run the tool: 'python3 main.py'"
