@@ -78,18 +78,11 @@ echo
 echo "Installing Foundry..."
 curl -L https://foundry.paradigm.xyz | bash
 
-# Add Foundry to PATH
-echo "Adding Foundry to PATH..."
-echo 'export PATH="$HOME/.foundry/bin:$PATH"' >> ~/.bashrc
-
-# Source the updated .bashrc to use the new PATH
-source "$HOME/.bashrc"
-
 # Run foundryup directly from the .foundry/bin directory
 echo "Running foundryup to install Foundry..."
 "$HOME/.foundry/bin/foundryup"
 
 echo
-echo "Installation complete!"
+echo "Installation complete! Read the README inside ~/foundry-telliot-helper"
 echo
-echo -e "Run 'cd ~/foundry-telliot-helper' to get in the folder\n Then run 'source foundryVenv/bin/activate' to activate python venv\n Don't forget to copy and edit the '.env.example' file!\n\n To run the tool: 'python3 main.py'"
+echo -e "RESTART your terminal! \nRun 'cd ~/foundry-telliot-helper' to get in the folder\n Then run 'source foundryVenv/bin/activate' to activate python venv\n Don't forget to copy and edit the '.env.example' file!\n\n To run the tool: 'python3 main.py'"
