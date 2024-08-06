@@ -79,12 +79,15 @@ echo "Installing Foundry..."
 curl -L https://foundry.paradigm.xyz | bash
 
 # Add Foundry to PATH
-echo "Adding Foundry to PATH..."
-echo 'export PATH="$HOME/.foundry/bin:$PATH"' >> ~/.bashrc
-source "$HOME/.bashrc"
-echo
+#echo "Adding Foundry to PATH..."
+#echo 'export PATH="$HOME/.foundry/bin:$PATH"' >> ~/.bashrc
+
+# Run foundryup directly from the .foundry/bin directory
 echo "Running foundryup to install Foundry..."
-foundryup
+"$HOME/.foundry/bin/foundryup"
+
+#echo "Running foundryup to install Foundry..."
+#foundryup
 
 echo
 echo "Installation complete!"
