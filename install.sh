@@ -6,10 +6,13 @@ if [ -d "$HOME/foundry-telliot-helper" ]; then
   exit 1
 fi
 
-echo "Choose the environment to clone:"
+echo "This script will install Python, Foundry and may mess with your dev env."
+echo "If installing in your main machine, please read the install.sh before continuing!"
+echo
+echo "Choose the environment to clone and install:"
 echo "1 - main"
 echo "2 - dev"
-read -p "Enter 1 for main or 2 for dev: " environment_choice
+read -p "Enter 1-main or 2-dev: " environment_choice
 
 echo "You entered: $environment_choice"
 
@@ -74,4 +77,3 @@ echo
 echo "Installation complete!"
 echo
 echo -e "Run cd ~/foundry-telliot-helper to get in the folder\n Then run source foundryVenv/bin/activate to activate python venv\n Don't forget to copy and edit the .env.example file!\n\n To run the helper: python3 main.py"
-
